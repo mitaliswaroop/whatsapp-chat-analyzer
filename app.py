@@ -109,7 +109,7 @@ if uploaded_file is not None:
         st.title("Most Common Words")
         most_common_df = helper.most_common_words(selected_user, df)
         fig, ax = plt.subplots(figsize=(12, 8))
-        ax.barh(most_common_df[0], most_common_df[1])
+        ax.barh(most_common_df[word], most_common_df[count])
         plt.xticks(rotation = 45)
         st.pyplot(fig)
 
