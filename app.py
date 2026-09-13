@@ -109,11 +109,7 @@ if uploaded_file is not None:
         st.title("Most Common Words")
         most_common_df = helper.most_common_words(selected_user, df)
         fig, ax = plt.subplots(figsize=(12, 8))
-<<<<<<< HEAD
         ax.barh(most_common_df[0], most_common_df[1])
-=======
-        ax.barh(most_common_df['word'], most_common_df['count'])
->>>>>>> cef88523e2c65bdf9c8914abd55d13c0ff11098b
         plt.xticks(rotation = 45)
         st.pyplot(fig)
 
@@ -125,7 +121,6 @@ if uploaded_file is not None:
             st.dataframe(emoji_df)
         with col2:
             fig, ax = plt.subplots(figsize = (12,8))
-<<<<<<< HEAD
             ax.pie(emoji_df[1].head(), labels=emoji_df[0].head(), autopct="%0.2f")
             st.pyplot(fig)
 
@@ -187,7 +182,3 @@ if uploaded_file is not None:
                 sentiment_counts.to_frame(name="Count"),
                 use_container_width=True
             )
-=======
-            ax.pie(emoji_df['count'].head(), labels=emoji_df['emoji'].head(), autopct="%0.2f")
-            st.pyplot(fig)
->>>>>>> cef88523e2c65bdf9c8914abd55d13c0ff11098b
