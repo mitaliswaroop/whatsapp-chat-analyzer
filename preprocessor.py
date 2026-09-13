@@ -1,9 +1,12 @@
 import re
 import pandas as pd
 
+<<<<<<< HEAD
 from helper import analyze_sentiment
 
 
+=======
+>>>>>>> cef88523e2c65bdf9c8914abd55d13c0ff11098b
 def preprocess(chat_text):
 
     # Decode bytes if needed
@@ -62,6 +65,7 @@ def preprocess(chat_text):
     df['month_num'] = df['date'].dt.month
     df['only_date'] = df['date'].dt.date
     df['day_name'] = df['date'].dt.day_name()
+<<<<<<< HEAD
     # clean messages
     df = df[df['message'].notna()]
     df['message'] = df['message'].astype(str)
@@ -72,6 +76,8 @@ def preprocess(chat_text):
 
     # apply sentiment
     df['sentiment'] = df['message'].apply(analyze_sentiment)
+=======
+>>>>>>> cef88523e2c65bdf9c8914abd55d13c0ff11098b
 
     period = []
     for hour in df[['day_name', 'hour']]['hour']:
@@ -84,7 +90,10 @@ def preprocess(chat_text):
     df['period'] = period
 
     return df
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> cef88523e2c65bdf9c8914abd55d13c0ff11098b
