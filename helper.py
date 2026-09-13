@@ -7,11 +7,7 @@ import nltk
 from collections import Counter
 extractor = URLExtract()
 
-import matplotlib.pyplot as plt
-from matplotlib import font_manager
-emoji_font = font_manager.FontProperties(
-    fname="C:/Windows/Fonts/seguiemj.ttf")
-plt.rcParams["font.family"] = emoji_font.get_name()
+
 
 def fetch_stats(selected_user, df):
     if selected_user != 'Overall':
@@ -137,8 +133,6 @@ def activity_heatmap(selected_user,df):
     user_heatmap = df.pivot_table(index='day_name', columns='period', values='message', aggfunc='count').fillna(0)
     return user_heatmap
 
-import nltk
-from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 # Download VADER lexicon
 nltk.download('vader_lexicon', quiet=True)
